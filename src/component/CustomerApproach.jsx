@@ -5,6 +5,7 @@ import Image from "next/image";
 import customerCentricApproach from "../assets/landingPage/customerCentricApproach.png";
 import strongerRelationship from "../assets/landingPage/strongerRelationship.jpeg";
 import trustedPartnership from "../assets/landingPage/trustedPartnership.jpeg";
+import AnimatedBackground from "./AnimatedBackground";
 
 export const customerApproachData = [
   {
@@ -36,15 +37,8 @@ export const customerApproachData = [
 export default function CustomerApproach() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-24 md:py-32">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-100/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-100/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/20 rounded-full blur-3xl" />
-      </div>
-
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+      {/* Professional Animated Background */}
+      <AnimatedBackground intensity="low" />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Header Section */}

@@ -2,19 +2,13 @@
 
 import Image from "next/image";
 import heroBanner from "../assets/voyagerLogo.jpg";
+import AnimatedBackground from "./AnimatedBackground";
 
 export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-cyan-50/30 py-20 md:py-32">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 -left-40 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl" />
-      </div>
-
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
+      {/* Professional Animated Background */}
+      <AnimatedBackground intensity="medium" />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
