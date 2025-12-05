@@ -12,30 +12,55 @@ export const dashboardKeyFeatures = [
   {
     imgSrc: visualizeImage,
     heading: "Visualize",
+    accentFrom: "from-cyan-500/30",
+    accentTo: "to-cyan-500/0",
+    glowFrom: "from-cyan-100",
+    glowTo: "to-cyan-50",
+    ring: "ring-cyan-100",
     paragraph:
       "Easier access to strategic initiatives and objectives for all staff through a shared digital platform with unlimited users and plans.",
   },
   {
     imgSrc: alignImage,
     heading: "Align",
+    accentFrom: "from-emerald-500/30",
+    accentTo: "to-emerald-500/0",
+    glowFrom: "from-emerald-100",
+    glowTo: "to-emerald-50",
+    ring: "ring-emerald-100",
     paragraph:
       "Increased understanding of how individual work supports the strategic plan through strategy maps, the design framework, ecological assessments, and resource integration.",
   },
   {
     imgSrc: monitorImage,
     heading: "Monitor",
+    accentFrom: "from-sky-500/30",
+    accentTo: "to-sky-500/0",
+    glowFrom: "from-sky-100",
+    glowTo: "to-sky-50",
+    ring: "ring-sky-100",
     paragraph:
       "Improved transparency of strategic goal attainment with real-time tracking through status updates and checkpoints.",
   },
   {
     imgSrc: collaborateImage,
     heading: "Collaborate",
+    accentFrom: "from-indigo-500/30",
+    accentTo: "to-indigo-500/0",
+    glowFrom: "from-indigo-100",
+    glowTo: "to-indigo-50",
+    ring: "ring-indigo-100",
     paragraph:
       "Enhanced communication between your staff, school board, and community with dashboards, board reports, calendar syncing, and more.",
   },
   {
     imgSrc: measureImage,
     heading: "Measure",
+    accentFrom: "from-fuchsia-500/30",
+    accentTo: "to-fuchsia-500/0",
+    glowFrom: "from-fuchsia-100",
+    glowTo: "to-fuchsia-50",
+    ring: "ring-fuchsia-100",
     paragraph:
       "Focused school metrics for strengthened confidence in the plan’s results and impact shown with customizable reports.",
   },
@@ -43,43 +68,70 @@ export const dashboardKeyFeatures = [
 
 export default function OurVision() {
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
-          Our Vision
-        </h1>
+    <section className="relative overflow-hidden bg-linear-to-b from-slate-50 via-white to-slate-50 py-20">
+      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-cyan-100 blur-3xl opacity-50" />
+      <div className="pointer-events-none absolute -right-32 bottom-10 h-72 w-72 rounded-full bg-indigo-100 blur-3xl opacity-50" />
 
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          We empower educational institutions with modern strategic planning
-          tools that enhance clarity, collaboration, measurement, and results.
-        </p>
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="text-center space-y-4">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-cyan-700 shadow-sm ring-1 ring-cyan-100">
+            Strategic clarity
+          </span>
+          <h1 className="text-4xl font-extrabold text-slate-900 sm:text-5xl">
+            Our Vision
+          </h1>
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600">
+            We empower educational institutions with modern strategic planning
+            tools that enhance clarity, collaboration, measurement, and results.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mt-12">
-          {dashboardKeyFeatures.map((item, index) => (
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {dashboardKeyFeatures.map((item) => (
             <div
-              key={index}
-              className="group flex flex-col items-center text-center px-4 hover:-translate-y-2 transition-all duration-300"
+              key={item.heading}
+              className="group relative h-full overflow-hidden rounded-3xl border border-slate-100 bg-white/90 shadow-lg ring-1 ring-black/5 transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              {/* Hover circle + zoom image */}
               <div
-                className="w-28 h-28 flex items-center justify-center rounded-full bg-white shadow-md mb-4 
-                  transition-all duration-300 group-hover:shadow-xl group-hover:bg-cyan-50"
-              >
-                <Image
-                  src={item.imgSrc}
-                  alt={item.heading}
-                  width={96}
-                  height={96}
-                  className="object-contain transition-transform duration-300 group-hover:scale-110"
-                />
+                className={`absolute inset-x-0 top-0 h-1.5 bg-linear-to-r ${item.accentFrom} ${item.accentTo} opacity-80 transition duration-300 group-hover:opacity-100`}
+              />
+              <div
+                className={`pointer-events-none absolute inset-0 bg-linear-to-b ${item.glowFrom} ${item.glowTo} opacity-0 transition duration-300 group-hover:opacity-60`}
+              />
+
+              <div className="relative flex h-full flex-col items-center gap-4 px-7 py-9 text-center">
+                <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
+                  Focus area
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
+                </div>
+
+                <div className="relative">
+                  <div
+                    className={`absolute inset-2 rounded-full bg-linear-to-br ${item.glowFrom} ${item.glowTo} blur-2xl opacity-80`}
+                  />
+                  <div
+                    className={`relative flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-lg ring-1 ring-slate-200 transition duration-300 group-hover:scale-105 group-hover:${item.ring}`}
+                  >
+                    <Image
+                      src={item.imgSrc}
+                      alt={item.heading}
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-lg font-semibold text-slate-900 transition-colors duration-300 group-hover:text-slate-800">
+                    {item.heading}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    {item.paragraph}
+                  </p>
+                </div>
               </div>
-
-              {/* Heading hover color */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-cyan-700">
-                {item.heading}dsfsd
-              </h3>
-
-              <p className="text-sm text-gray-500">{item.paragraph}</p>
             </div>
           ))}
         </div>
