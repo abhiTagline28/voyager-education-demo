@@ -2,6 +2,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import AnimatedBackground from "./AnimatedBackground";
+import ScrollReveal from "./ScrollReveal";
 
 const researchArticles = [
   {
@@ -61,17 +63,13 @@ export default function WhitePaper() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-cyan-200/20 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-purple-200/20 to-pink-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-cyan-100/10 to-blue-100/10 rounded-full blur-3xl"></div>
-      </div>
+      {/* Professional Animated Background */}
+      <AnimatedBackground intensity="low" />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-28">
         <div className="relative max-w-5xl mx-auto px-6 text-center mt-7">
-          <div className="animate-fade-in">
+          <ScrollReveal direction="up" delay={100}>
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
               White Papers & Research
             </h1>
@@ -80,7 +78,7 @@ export default function WhitePaper() {
               Insights, frameworks, and deep-dive analysis from education
               researchers and leadership experts.
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -162,10 +160,11 @@ export default function WhitePaper() {
           </div>
 
           {/* Coming Soon Section */}
-          <div className="mt-20 md:mt-28 text-center">
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-              <div className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-10 md:p-12 shadow-xl border border-gray-100/50">
+          <ScrollReveal direction="up" delay={400}>
+            <div className="mt-20 md:mt-28 text-center">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-10 md:p-12 shadow-xl border border-gray-100/50">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 mb-6 shadow-lg">
                   <svg
                     className="w-10 h-10 text-white"
@@ -192,6 +191,7 @@ export default function WhitePaper() {
               </div>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 

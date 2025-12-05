@@ -5,6 +5,9 @@ import AlertStatusReport from "../assets/demo/alert-strategy-report.jpg";
 import createPlan from "../assets/demo/create-plan-screen.jpg";
 import strategyMap from "../assets/demo/strategy-map.jpg";
 import beaconLogo from "../assets/icons/beacon_logo.png";
+import AnimatedBackground from "./AnimatedBackground";
+import ScrollReveal from "./ScrollReveal";
+import MagneticButton from "./MagneticButton";
 
 export default function Products() {
   const images = [createPlan, strategyMap, AlertStatusReport];
@@ -43,17 +46,13 @@ export default function Products() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-cyan-200/20 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-purple-200/20 to-pink-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-cyan-100/10 to-blue-100/10 rounded-full blur-3xl"></div>
-      </div>
+      {/* Professional Animated Background */}
+      <AnimatedBackground intensity="low" />
 
       {/* HERO SECTION */}
       <section className="relative py-20 md:py-28">
         <div className="relative max-w-5xl mx-auto px-6 text-center mt-7">
-          <div className="animate-fade-in">
+          <ScrollReveal direction="up" delay={100}>
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
               Transform Your District's Strategic Planning
             </h1>
@@ -64,19 +63,21 @@ export default function Products() {
               Beacon solves this with a powerful, unified platform built
               specifically for district leaders.
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* INTRODUCTION SECTION */}
+          {/* INTRODUCTION SECTION */}
       <section className="relative py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-              Introducing <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">Beacon</span>
-            </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
-          </div>
+          <ScrollReveal direction="down" delay={100}>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                Introducing <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-teal-600 bg-clip-text text-transparent animate-gradient-shift">Beacon</span>
+              </h2>
+              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
+            </div>
+          </ScrollReveal>
 
           {/* Beacon Logo */}
           <div className="flex justify-center mb-12">
@@ -207,7 +208,7 @@ export default function Products() {
                 Beacon brings clarity, accountability, and real-time visibility to
                 your district's strategic planning process.
               </p>
-              <button
+              <MagneticButton
                 onClick={() =>
                   window.open("https://www.theceso.com/beacon", "_blank")
                 }
@@ -230,7 +231,7 @@ export default function Products() {
                     />
                   </svg>
                 </span>
-              </button>
+              </MagneticButton>
             </div>
           </div>
         </div>

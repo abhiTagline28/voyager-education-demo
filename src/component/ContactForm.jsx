@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import AnimatedBackground from "./AnimatedBackground";
+import ScrollReveal from "./ScrollReveal";
+import MagneticButton from "./MagneticButton";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -84,31 +88,30 @@ export default function ContactForm() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-cyan-200/20 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-purple-200/20 to-pink-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-cyan-100/10 to-blue-100/10 rounded-full blur-3xl"></div>
-      </div>
+      {/* Professional Animated Background */}
+      <AnimatedBackground intensity="low" />
 
       <div className="relative max-w-4xl mx-auto px-6 py-20 md:py-28">
         {/* Header Section */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-            CONTACT
-          </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Leave us a message.
-          </p>
-        </div>
+        <ScrollReveal direction="down" delay={100}>
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+              CONTACT
+            </h1>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Leave us a message.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Form Card */}
-        <div className="relative">
-          {/* Glow effect behind card */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+        <ScrollReveal direction="up" delay={200}>
+          <div className="relative">
+            {/* Glow effect behind card */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20 animate-pulse-glow"></div>
 
-          <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-100/50 p-8 md:p-12">
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-100/50 p-8 md:p-12">
             {/* Success/Error Messages */}
             {submitStatus === "success" && (
               <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl flex items-center space-x-3 animate-fade-in">
@@ -289,7 +292,7 @@ export default function ContactForm() {
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 {/* Send Button */}
-                <button
+                <MagneticButton
                   type="submit"
                   disabled={isSubmitting}
                   className="group relative flex-1 px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white font-bold uppercase rounded-xl shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
@@ -298,26 +301,7 @@ export default function ContactForm() {
                   <span className="relative z-10 flex items-center justify-center space-x-2">
                     {isSubmitting ? (
                       <>
-                        <svg
-                          className="animate-spin h-5 w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          ></circle>
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          ></path>
-                        </svg>
+                        <LoadingSpinner size="sm" className="text-white" />
                         <span>Sending...</span>
                       </>
                     ) : (
@@ -339,7 +323,7 @@ export default function ContactForm() {
                       </>
                     )}
                   </span>
-                </button>
+                </MagneticButton>
 
                 {/* Reset Button */}
                 <button
@@ -368,11 +352,13 @@ export default function ContactForm() {
             </form>
           </div>
         </div>
+        </ScrollReveal>
 
         {/* Additional Contact Info */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-4">Or reach us directly:</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <ScrollReveal direction="up" delay={400}>
+          <div className="mt-16 text-center">
+            <p className="text-gray-600 mb-4">Or reach us directly:</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
               href="mailto:cebalow@voyagered.com"
               className="group flex items-center space-x-2 text-gray-700 hover:text-cyan-600 transition-colors duration-300"
@@ -414,6 +400,7 @@ export default function ContactForm() {
             </a>
           </div>
         </div>
+        </ScrollReveal>
       </div>
 
       <style jsx>{`

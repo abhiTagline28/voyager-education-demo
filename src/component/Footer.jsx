@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import voyagerLogo from "../assets/voyagerLogo.jpg";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,7 +24,8 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
-          <div className="flex flex-col items-start space-y-6">
+          <ScrollReveal direction="up" delay={100}>
+            <div className="flex flex-col items-start space-y-6">
             <Link 
               href="/" 
               className="group relative inline-block mb-2"
@@ -45,9 +47,11 @@ export default function Footer() {
             {/* Decorative line */}
             <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
           </div>
+          </ScrollReveal>
 
           {/* Navigation links */}
-          <div className="space-y-6">
+          <ScrollReveal direction="up" delay={200}>
+            <div className="space-y-6">
             <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Quick Links
             </h3>
@@ -91,9 +95,11 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          </ScrollReveal>
 
           {/* Contact info */}
-          <div className="space-y-6">
+          <ScrollReveal direction="up" delay={300}>
+            <div className="space-y-6">
             <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Contact Us
             </h3>
@@ -153,6 +159,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          </ScrollReveal>
         </div>
 
         {/* Bottom section with copyright */}

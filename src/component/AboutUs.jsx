@@ -7,6 +7,8 @@ import charlenne from "../assets/img/charlenne.jpg";
 import chrisJr from "../assets/img/jr.jpg";
 import mary from "../assets/img/mary.jpg";
 import chrisSr from "../assets/img/sr.jpg";
+import AnimatedBackground from "./AnimatedBackground";
+import ScrollReveal from "./ScrollReveal";
 
 const leadershipTeam = [
   {
@@ -72,49 +74,52 @@ const AboutUs = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-cyan-200/20 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-purple-200/20 to-pink-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
+      {/* Professional Animated Background */}
+      <AnimatedBackground intensity="low" />
 
       {/* Mission & Vision Section */}
       <section ref={sectionRef} className="relative py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-              Mission & Vision
-            </h1>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
-          </div>
+          <ScrollReveal direction="down" delay={100}>
+            <div className="text-center mb-12">
+              <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+                Mission & Vision
+              </h1>
+              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
+            </div>
+          </ScrollReveal>
 
           <div className="space-y-8">
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg border border-gray-100/50">
-                <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-                  Working in educational leadership for over 30 years, we found that
-                  most school districts were using antiquated methods to accomplish
-                  strategic planning. Having been involved in strategic planning, we
-                  observed that most times a plan would lay dust-covered on a shelf
-                  with actual implementation weak at best. District leaders were
-                  frustrated with the lack of follow through and the inability to
-                  track progress in real time.
-                </p>
+            <ScrollReveal direction="right" delay={200}>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg border border-gray-100/50">
+                  <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+                    Working in educational leadership for over 30 years, we found that
+                    most school districts were using antiquated methods to accomplish
+                    strategic planning. Having been involved in strategic planning, we
+                    observed that most times a plan would lay dust-covered on a shelf
+                    with actual implementation weak at best. District leaders were
+                    frustrated with the lack of follow through and the inability to
+                    track progress in real time.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg border border-gray-100/50">
-                <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-                  At Voyager Education we wanted to fix this problem and improve
-                  outcomes for all students, as well as staff, by evolving strategic
-                  planning from a static yearly endeavor into a continuous progress
-                  and action-oriented process.
-                </p>
+            <ScrollReveal direction="left" delay={300}>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg border border-gray-100/50">
+                  <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+                    At Voyager Education we wanted to fix this problem and improve
+                    outcomes for all students, as well as staff, by evolving strategic
+                    planning from a static yearly endeavor into a continuous progress
+                    and action-oriented process.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -122,15 +127,17 @@ const AboutUs = () => {
       {/* Leadership Team Section */}
       <section ref={teamRef} className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-              Leadership Team
-            </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full"></div>
-            <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto">
-              Meet the passionate leaders driving innovation in educational strategic planning
-            </p>
-          </div>
+          <ScrollReveal direction="down" delay={100}>
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+                Leadership Team
+              </h2>
+              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full"></div>
+              <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto">
+                Meet the passionate leaders driving innovation in educational strategic planning
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {leadershipTeam.map((member, index) => (

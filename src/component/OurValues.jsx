@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import AnimatedBackground from "./AnimatedBackground";
+import ScrollReveal from "./ScrollReveal";
 
 export const valuesData = [
   {
@@ -171,24 +173,25 @@ export default function OurValues() {
       ref={sectionRef}
       className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-24 overflow-hidden"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-cyan-200/20 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-200/20 to-pink-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
+      {/* Professional Animated Background */}
+      <AnimatedBackground intensity="low" />
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
-        <div className="mb-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent mb-4 animate-fade-in">
-            Our Values
-          </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-6"></div>
-        </div>
+        <ScrollReveal direction="down" delay={100}>
+          <div className="mb-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent mb-4">
+              Our Values
+            </h1>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-6"></div>
+          </div>
+        </ScrollReveal>
 
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16 leading-relaxed">
-          The principles that guide our work and help us deliver exceptional
-          outcomes.
-        </p>
+        <ScrollReveal direction="up" delay={200}>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16 leading-relaxed">
+            The principles that guide our work and help us deliver exceptional
+            outcomes.
+          </p>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {valuesData.map((item, i) => (
