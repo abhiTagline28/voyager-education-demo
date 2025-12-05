@@ -108,6 +108,20 @@ export default function Navbar() {
               )}
               <span className="relative z-10">White Paper</span>
             </Link>
+
+            <Link
+              href="/contact"
+              className={`relative px-5 py-2.5 rounded-lg font-semibold text-[16px] transition-all duration-300 ${
+                isActive("/contact")
+                  ? "text-cyan-400 bg-cyan-500/10 shadow-lg shadow-cyan-500/20"
+                  : "text-slate-200 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              {isActive("/contact") && (
+                <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-transparent rounded-lg" />
+              )}
+              <span className="relative z-10">Contact</span>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button with enhanced styling */}
@@ -190,6 +204,18 @@ export default function Navbar() {
               }`}
             >
               White Paper
+            </Link>
+
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className={`px-4 py-3 rounded-lg font-semibold text-[17px] transition-all duration-300 ${
+                isActive("/contact")
+                  ? "text-cyan-400 bg-cyan-500/10 shadow-lg shadow-cyan-500/20"
+                  : "text-slate-200 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              Contact
             </Link>
           </nav>
         </div>

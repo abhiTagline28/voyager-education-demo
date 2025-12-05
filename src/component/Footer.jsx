@@ -57,6 +57,7 @@ export default function Footer() {
                 { href: "/about", label: "About Us" },
                 { href: "/products", label: "Products" },
                 { href: "/white-paper", label: "White Paper" },
+                { href: "/contact", label: "Contact" },
                 { href: "https://theceso.com/beacon-demo/", label: "Get Demo", external: true },
               ].map((link, index) => (
                 <li key={index}>
